@@ -212,7 +212,7 @@ class StandardRoIHeadOAMIL(BaseRoIHead, BBoxTestMixin, MaskTestMixin):
         Procedure of instance selection:
             1. construct object bags 
             2. apply instance selector (OA-IE is optional in step 2)
-            3. get best selected instances using Eq. (6)
+            3. get best selected instances using Eq. (4)
         """
 
         '''
@@ -287,7 +287,7 @@ class StandardRoIHeadOAMIL(BaseRoIHead, BBoxTestMixin, MaskTestMixin):
                 best_instance = object_bag_boxes[max_inds].clone()
                 best_instance = best_instance.clamp(min=0.0).view(1, -1)
 
-                # modify noisy gt using Eq. (6)
+                # modify noisy gt using Eq. (4)
                 phi = ((best_score.detach())**self.bbox_head.oais_gamma).clamp(max=self.bbox_head.oais_theta)
                 best_selected_instance = best_instance.detach() * phi + noisy_gt_boxes[index[0]].view(1, -1) * (1 - phi)
 

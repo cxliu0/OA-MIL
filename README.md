@@ -125,6 +125,11 @@ sh test.sh
 }
 ```
 
+## Misc
+
+- Supplementary can be found in [google drive](https://drive.google.com/file/d/15dcrAn7iUsAThZyZKb_DnnXuChN2NIVc/view?usp=sharing)
+
+
 ## Acknowlegdement
 
 This repository is based on [mmdetection](https://github.com/open-mmlab/mmdetection).

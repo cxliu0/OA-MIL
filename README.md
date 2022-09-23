@@ -80,6 +80,8 @@ python ./utils/gen_noisy_voc.py --box_noise_level 0.4
 python ./utils/gen_noisy_coco.py --box_noise_level 0.4
 ```
 
+- Alternatively, the noisy annotation files (coco dataset) we used can be downloaded from [google drive](https://drive.google.com/file/d/1Ujr6sJDcXjWyxlGhuk6B8vmJj6FqA4z3/view?usp=sharing)
+
 ## Training
 
 All models of OA-MIL are trained with a total batch size of 16.

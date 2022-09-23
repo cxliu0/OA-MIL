@@ -67,7 +67,7 @@ def preprocess_dataset(prefix='./data/coco/'):
     return save_path_train
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Generate noisy VOC2007')
+    parser = argparse.ArgumentParser(description='Generate noisy COCO')
     parser.add_argument(
         '--box_noise_level',
         type=float,

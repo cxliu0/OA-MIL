@@ -198,7 +198,10 @@ class StandardRoIHeadOAMIL(BaseRoIHead, BBoxTestMixin, MaskTestMixin):
                 inst_scores_list.append(inst_scores)
             
             if len(inst_scores_list) > 1:
-                loss_bbox['loss_oais'] = (1-inst_scores_list[0]) + (1-sum(inst_scores_list[1:])/self.bbox_head.oaie_num)*self.bbox_head.oaie_coef
+                if self.bbox_head.oaie_type == 'refine':
+                    loss_bbox['loss_oais'] = (1-inst_scores_list[0]) + (1-sum(inst_scores_list[1:])/self.bbox_head.oaie_num)*self.bbox_head.oaie_coef
+                elif self.bbox_head.oaie_type == 'random':
+                    loss_bbox['loss_oais'] = 1 - sum(inst_scores_list)/(self.bbox_head.oaie_num+1)
             else:
                 loss_bbox['loss_oais'] = 1-inst_scores_list[0]
             loss_bbox['loss_oais'] *= self.bbox_head.oamil_lambda
@@ -249,7 +252,7 @@ class StandardRoIHeadOAMIL(BaseRoIHead, BBoxTestMixin, MaskTestMixin):
             pos_bbox_pred = bbox_pred.view(bbox_pred.size(0), -1, 4)[inds, labels[pos_inds.type(torch.bool)]]
 
             # decode prediction of each instance
-            if i == 0:
+            if i == 0 or self.bbox_head.oaie_type == 'random':
                 new_pred_boxes = self.bbox_head.bbox_coder.decode(rois[:, 1:][pos_inds.type(torch.bool)], pos_bbox_pred)
             else:
                 new_pred_boxes = self.bbox_head.bbox_coder.decode(new_roi[:, 1:], pos_bbox_pred)

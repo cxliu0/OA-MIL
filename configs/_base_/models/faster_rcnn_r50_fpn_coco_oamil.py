@@ -54,7 +54,8 @@ model = dict(
             loss_bbox=dict(type='L1Loss', loss_weight=1.0),
 
             # OA-MIL params
-            oamil_lambda=0.1,
+            oamil_lambda=0.1,   # for 40% noise
+            #oamil_lambda=0.01,   # for 20% noise
 
             # OA-IS params
             oais_flag=1,
@@ -67,6 +68,8 @@ model = dict(
             oaie_num=4,
             oaie_coef=1.0,
             oaie_epoch=9,
+            oaie_type='random', # for 40% noise
+            #oaie_type='refine', # for 20% noise
         )
     )
 )

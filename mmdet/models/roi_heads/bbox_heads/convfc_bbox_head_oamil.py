@@ -100,6 +100,7 @@ class ConvFCBBoxHeadOAMIL(BBoxHead):
         self.oaie_num = kwargs['oaie_num'] if 'oaie_num' in kwargs else 0
         self.oaie_coef = kwargs['oaie_coef'] if 'oaie_coef' in kwargs else 0.0
         self.oaie_epoch = kwargs['oaie_epoch'] if 'oaie_epoch' in kwargs else 12
+        self.oaie_type = kwargs['oaie_type'] if 'oaie_type' in kwargs else 'refine'
 
     def _add_conv_fc_branch(self,
                             num_branch_convs,

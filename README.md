@@ -146,7 +146,7 @@ sh test.sh
   
 - #### Where are the noisy annotation files the paper used?
 
-  - The noisy annotation files of coco dataset is available at [google drive](https://drive.google.com/file/d/1Ujr6sJDcXjWyxlGhuk6B8vmJj6FqA4z3/view?usp=sharing);
+  - The noisy annotation files of coco dataset are available at [google drive](https://drive.google.com/file/d/1Ujr6sJDcXjWyxlGhuk6B8vmJj6FqA4z3/view?usp=sharing);
   - For GWHD dataset, please refer to [this issue](https://github.com/cxliu0/OA-MIL/issues/5#issuecomment-1260347950).
 
 

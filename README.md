@@ -16,7 +16,7 @@ Chengxin Liu<sup>1</sup>, Kewei Wang<sup>1</sup>, Hao Lu<sup>1</sup>, Zhiguo Cao
 
 ## Highlights
 
-- **Robust**: OA-MIL is robust to inaccuate box annotations, and also effective on clean data;
+- **Robust**: OA-MIL is robust to inaccurate box annotations, and also effective on clean data;
 - **Generic**: Our formulation is general and applicable to both one-stage and two-stage detectors;
 - **No extra parameters**: OA-MIL does not introduce extra model parameters.
 
@@ -57,7 +57,7 @@ pip install -e .
 
 ## Data Preparation
 
-- Download [VOC2007](https://pjreddie.com/projects/pascal-voc-dataset-mirror/) and [COCO](https://cocodataset.org/#download) datasets. We expect the direcory structure to be as follow:
+- Download [VOC2007](https://pjreddie.com/projects/pascal-voc-dataset-mirror/) and [COCO](https://cocodataset.org/#download) datasets. We expect the directory structure to be as follows:
 
 ```
 OA-MIL
@@ -146,13 +146,13 @@ sh test.sh
   
 - #### Where are the noisy annotation files the paper used?
 
-  - The noisy annotation files of coco dataset are available at [google drive](https://drive.google.com/file/d/1Ujr6sJDcXjWyxlGhuk6B8vmJj6FqA4z3/view?usp=sharing);
-  - For GWHD dataset, please refer to [this issue](https://github.com/cxliu0/OA-MIL/issues/5#issuecomment-1260347950).
+  - The noisy annotation files of the coco dataset are available at [google drive](https://drive.google.com/file/d/1Ujr6sJDcXjWyxlGhuk6B8vmJj6FqA4z3/view?usp=sharing);
+  - For the GWHD dataset, please refer to [this issue](https://github.com/cxliu0/OA-MIL/issues/5#issuecomment-1260347950).
 
 
 ## Citation
 
-If you find this work or code useful for your research, please cite:
+If you find this work or code useful for your research, please consider citing:
 ```
 @inproceedings{liu2022oamil,
   title={Robust Object Detection With Inaccurate Bounding Boxes},
@@ -162,6 +162,6 @@ If you find this work or code useful for your research, please cite:
 }
 ```
 
-## Acknowlegdement
+## Acknowledgement
 
 This repository is based on [mmdetection](https://github.com/open-mmlab/mmdetection).
